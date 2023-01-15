@@ -12,7 +12,10 @@ class NewsContainer extends StatelessWidget {
   String? imageUrl;
   String? description;
   NewsContainer(
-      {required this.title, required this.date, required this.imageUrl,required this.description});
+      {required this.title,
+      required this.date,
+      required this.imageUrl,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,13 @@ class NewsContainer extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           AppNavigator.appNavigator(
-              context, ShowScreen(imageUrl: imageUrl, title: title!,date: date,description:description,));
+              context,
+              ShowScreen(
+                imageUrl: imageUrl,
+                title: title!,
+                date: date,
+                description: description,
+              ));
         },
         child: Row(
           children: [

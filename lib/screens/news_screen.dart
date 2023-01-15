@@ -21,7 +21,11 @@ class NewsScreen extends StatelessWidget {
           var cubit = NewsCubit.get(context);
           return Scaffold(
             appBar: AppBar(
-              title: Text('News'),
+              centerTitle: true,
+              title: Text(
+                'News',
+                style: TextStyle(fontSize: 24.sp),
+              ),
               actions: [
                 IconButton(
                   icon: Icon(Icons.search),

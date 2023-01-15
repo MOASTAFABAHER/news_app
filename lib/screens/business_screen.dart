@@ -14,9 +14,7 @@ class BusinessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-
-    BlocProvider(
+    return BlocProvider(
       create: (context) => BusinessCubit()..getBusinessData(),
       child: BlocConsumer<BusinessCubit, BusinessState>(
         listener: (context, state) {},
@@ -27,7 +25,8 @@ class BusinessScreen extends StatelessWidget {
               : ListView.separated(
                   physics: BouncingScrollPhysics(),
                   itemBuilder: (Context, index) {
-                    return NewsContainer(description:cubit.requests!.articles?[index].description,
+                    return NewsContainer(
+                      description: cubit.requests!.articles?[index].description,
                       title: cubit.requests!.articles?[index].title,
                       date: cubit.requests!.articles?[index].publishedAt,
                       imageUrl: cubit.requests!.articles?[index].urlToImage,
@@ -36,7 +35,7 @@ class BusinessScreen extends StatelessWidget {
                   separatorBuilder: (context, index) {
                     return CustomDiveder();
                   },
-                  itemCount:cubit.requests!.articles!.length);
+                  itemCount: cubit.requests!.articles!.length);
         },
       ),
     );
