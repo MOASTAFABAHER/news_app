@@ -11,7 +11,6 @@ import '../components/Custom_diveder.dart';
 import '../components/news_container.dart';
 
 class SearchScreen extends StatefulWidget {
-
   SearchScreen({super.key});
 
   @override
@@ -30,7 +29,12 @@ class _SearchScreenState extends State<SearchScreen> {
         builder: (context, state) {
           var cubit = SearchCubit.get(context);
           return Scaffold(
-            appBar: AppBar(title: Text('News App',),centerTitle: true,),
+            appBar: AppBar(
+              title: Text(
+                'News App',
+              ),
+              centerTitle: true,
+            ),
             body: Column(
               children: [
                 Padding(
@@ -45,7 +49,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       }
                       return null;
                     },
-                    controller:searchController,
+                    controller: searchController,
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search),
                       enabledBorder: OutlineInputBorder(
@@ -56,9 +60,11 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20.h,),
+                SizedBox(
+                  height: 20.h,
+                ),
                 Expanded(
-                  child: state is !SearchGetNewsSuccsesState
+                  child: state is! SearchGetNewsSuccsesState
                       ? const Center(
                           child: CircularProgressIndicator(),
                         )
